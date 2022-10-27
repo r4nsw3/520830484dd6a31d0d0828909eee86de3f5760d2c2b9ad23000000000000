@@ -1,0 +1,225 @@
+     ______      _______ ______    _______    _____      _____    _______
+   _/   _  )__ _/  _   /_\     \ _/  _   /_ _/     \_   /   _/_ _/  _   /__
+   \   _/     \\  -\___\ \\     \\  -\___\ \\   _\   \--\___   \\  -\___\  \
+  /    \       .  _/      .      .  _/      .   \     .   :/    .  _/      _\
+./_____:\_____/____________\      \________/____:\_____\_______/___________\
+                           /______/
+                        _______
+   _______   _____ _____\      \   __________    _____
+  /   __  )__\    \\    \\      \ /    _    /   /   _/____   NSW Scene Rules
+ /   /_      \     \     \       \\   -\____\---\___      \ [31 January 2019]
+/      \      .     \     .       .   _/      .   :/       \
+\______:\______\___________\       \___________\___________/. ----------------+
+.                          /_______/                       .                  .
+|                                                                             |
+|                       NSW Release Standards v1.0 2019                       |
++-----------------------------------------------------------------------------+
+|                                                                             |
+|  1) Packing:                                                                |
+|     1.1) Releases must be packed in RAR. SFV and NFO must be included.      |
+|     1.2) RAR, SFV, NFO and JPG files must have unique filenames.            |
+|     1.3) Rars must be in multiples of 50.000.000 bytes but no larger than   |
+|          500.000.000 bytes.                                                 |
+|     1.4) Rars must be RAR4 or RAR5 using M1 compression (fastest) or higher |
+|                                                                             |
+|  2) NFO:                                                                    |
+|     2.1) The release must include a .NFO. The file must be a plain-text     |
+|          document and at least include the name of the title.               |
+|     2.2) NFO must include NCA title IDs.                                    |
+|     2.3) In the case of a trainer or other game patch, all compatible       |
+|          title IDs must be included in the NFO.                             |
+|     2.4) The source region must be included in the NFO.                     |
+|     2.5) All game languages are encouraged to be included in NFO.           |
+|     2.6) A short description of the release is encouraged to be in the NFO. |
+|                                                                             |
+|  3) Image format:                                                           |
+|     3.1) For cartridge releases, only .XCI format dumps are acceptable.     |
+|     3.2) For eShop releases, only .NSP format dumps are acceptable.         |
+|     3.3) XCI files must have the CERT sector replaced with all FF bytes.    |
+|     3.4) A full dump of a new cartridge revision is not allowed!            |
+|          If the secure partition has differences to a previous revision     |
+|          (game updates/DLC/etc included), and if the changes have not       |
+|          been previously released in some other form as Update etc.         |
+|          You can extract only the Update .NSP and pre it standalone.        |
+|          The full cartridge revision equals base-game + update and is       |
+|          only acceptable as INTERNAL release for collectors.                |
+|     3.5) For an eShop release, all NCA files downloaded from eShop must be  |
+|          included in the release. They must have the NAX-layer decrypted.   |
+|     3.6) For an eShop release, the NSP must include a forged ticket.        |
+|          The titlekey in this ticket must be encrypted with the relevant    |
+|          common ES key ("titlekek"). All console identifying information    |
+|          (including signature) must be removed.                             |
+|          This ticket must be able to be imported using ES with signature    |
+|          checks patched out!                                                |
+|                                                                             |
+|  4) Proof:                                                                  |
+|     4.1) All physical releases are required to include a proof picture      |
+|          with the cartridge visable and a group tag.                        |
+|     4.2) Releases that fail to pre with such proof are to be considered a   |
+|          nuke and can be propered.                                          |
+|          PROOFFiXES later than 4 hours from pre (if proper has not been     |
+|          pred during that time period) will not be accepted.                |
+|     4.3) Proof picture can be scanned and must be in JPEG format.           |
+|     4.4) Proof picture must not be blurry. Cartridge Code must be clearly   |
+|          visible.                                                           |
+|     4.5) If the medium or cover/booklet contain anything that may expose    |
+|          your identity, then that part of the image can be blurred or       |
+|          blackened. Additional scans may be added but these DO NOT count    |
+|          as sufficient proof!                                               |
+|     4.6) eShop releases will be exempt from proof requirements as they are  |
+|          downloadable. It is encouraged to release any games as fast as     |
+|          possible from their publish time, to ensure the titlekeys were     |
+|          NOT already shared and making your sources look suspect.           |
+|          Stealing Title keys from the public is obviously not tolerated!    |
+|                                                                             |
+|    NOTE: We STRONGLY recommend the removal of all Exif data! Uniquely       |
+|          identifying information such as the camera serial number and GPS   |
+|          coordinates can pose a security threat if not removed.             |
+|          Use tools such as jhead, PureJPG, EXIF Cleaner...                  |
+|                                                                             |
+|  5) Update/Patch/Trainer/DLC/eShop releases.                                |
+|     5.1) NSP game patches are allowed to be released, for the benefit of    |
+|          reducing / accomodating those with console bans / "superbans".     |
+|          Small Day One patches are allowed to be packed together with main  |
+|          eShop release, any other updates to be released individually.      |
+|          Groups can decide to release day one updates seperately if         |
+|          they consider the size relative to game unreasonable.              |
+|          Updates for Cartridge releases must be released seperately.        |
+|          Only latest Update versions allowed, these contain previous data,  |
+|          other cases use INTERNAL or READNFO to explain the purpose/case.   |
+|     5.2) eShop releases do not need the titlekey in the NFO.                |
+|          Anyone can extract the titlekey from the release themself.         |
+|     5.3) If update is for an INTERNAL release,                              |
+|          update must be tagged as INTERNAL too.                             |
+|     5.4) Any custom modifications to an NCA (for example: crack, trainer    |
+|          etc) must be in a custom patch format compatible with popular      |
+|          open-source custom firmware solutions, or an NSP/homebrew NRO that |
+|          generates such custom patches.                                     |
+|     5.5) A trainer for a paid game must be compatible with at least one of  |
+|          the releases of a game. Compatible titleid/release name must be    |
+|          included in the NFO.                                               |
+|     5.6) An in-app purchase crack can dupe a trainer or vice versa if they  |
+|          provide wholly the same features.                                  |
+|          For example: if a group releases an in-app purchase crack that     |
+|          allows to get unlimited coins, a later trainer that only has       |
+|          options for increasing coins by a certain amount, and options      |
+|          related to obtaining the benefits of coins, would be a dupe.       |
+|     5.7) It is allowed to release paid DLC, trainers or in-app purchase     |
+|          cracks for free eShop games too, no need for INTERNAL tags.        |
+|     5.8) The latest compatible game version may be included in the release, |
+|          if a previous release did not include it.                          |
+|          Therefore: it is allowed to release free eShop games, as long as   |
+|          you either provide some paid DLC with it, or put in the work and   |
+|          make a trainer or an in-app purchase crack! Else use INTERNAL.     |
+|          In this case, "incl." must be added to the dirname where           |
+|          appropriate. If the latest compatible game version is a patch      |
+|          NCA, then the directory name of the release including the base     |
+|          game NCA must be included in the NFO.                              |
+|     5.9) An NSP game update that has already been released as part of an    |
+|          updated XCI cart revision must be tagged INTERNAL or it's a dupe.  |
+|     6.0) DLC or DLC Unlocker must be specified if the .NSP contains data    |
+|          or is considered an Unlocker by definition.                        |
+|          DLC Unlockers for multiple Title ID/Region versions may be packed  |
+|          in the same release and mentioned in NFO.                          |
+|          If DLC is Title ID/Region specific, it must be mentioned in NFO    |
+|          and on the second release requires specific <REGION>_DLC tagging   |
+|          and may be released individually.                                  |
+|                                                                             |
+|  6) Region, Languages, Tags:                                                |
+|     6.1) The dirname must contain the English game name when English is     |
+|          available in game, CNMT version number when non-zero and any tags. |
+|     6.2) If a game does not include the English language, this must be      |
+|          specified in the dir name unless the region tag implies that       |
+|          regions native language is the only language in the game           |
+|          eg. game tagged JPN is Japanese only, hence does not need to       |
+|          state the language.                                                |
+|     6.3) The version number must be the parsed format, cut down to the      |
+|          last non-zero non-dot character. Therefore: if CNMT version is     |
+|          v65536 (0.1.0.1), version number in dirname should be v1.0.1       |
+|          Dirname should use the version number on the game icon details     |
+|          and nfo should contain both: Example v1.0.1 (v65536)               |
+|     6.4) For non English releases (JAPANESE/KOREAN/etc.) the directory      |
+|          name MUST have a region tag (JPN/KOR/MULTI...)                     |
+|     6.5) If a game is re-released for having additional foreign languages,  |
+|          the release must be tagged as MULTI and the NFO must specify       |
+|          which additional languages are included.                           |
+|          If no different set of languages is available, but the game still  |
+|          has a different Title ID, you must use INTERNAL tag.               |
+|          The first working release with English doesn't require any tags.   |
+|     6.6) If the release is (or includes) an in-app purchase crack then the  |
+|          dirname must include the IAPCrack tag (also see rule 5.9).         |
+|     6.7) If the release is (or includes) a trainer then the dirname must    |
+|          include the PlusX.Trainer tag where X is the number of options     |
+|          that the trainer provides (also see rule 5.9).                     |
+|                                                                             |
+|  7) Other NFO information:                                                  |
+|     7.1) If the version number in-game is different to the CNMT version     |
+|          number, then the in-game version number can be included in NFO.    |
+|     7.2) If the release is an XCI/NCA cart revision, the revision number    |
+|          of the cartridge can be included in the NFO.                       |
+|     7.3) If the game is online-only, the NFO must include this information. |
+|     7.4) If the release is a crack or trainer compatible with more than one |
+|          version/update of a game, the highest compatible version number    |
+|          must be included in the dirname, and other compatible versions     |
+|          listed in the NFO.                                                 |
+|     7.5) If the release uses REPACK, PROPER or INTERNAL tags, then the      |
+|          reason for using these tags must be explained in the NFO.          |
+|                                                                             |
+|  8) Dupes, Nukes, REPACK, PROPER, INTERNAL:                                 |
+|     8.1) You cannot release the same game if another group has already      |
+|          released it. Physical cartridge XCI format after eShop NSP is      |
+|          acceptable but not vice versa.                                     |
+|     8.2) If a releases is flawed for any reason, for example if the game    |
+|          crashes on level 2. Then you can release a PROPER that fixes the   |
+|          issue. If you are fixing your own release, then use the REPACK tag |
+|          instead of the PROPER tag. PROPER/REPACK reason must be stated in  |
+|          the NFO.                                                           |
+|     8.3) If the release has a packing issue, such as it will not extract,   |
+|          a rar does not match the crc in the SFV or it pre'd with missing   |
+|          files (RAR/NFO/SFV) then it will be nuked and can be REPACK'ed ,   |
+|          PROPER'ed or RARFiX'ed.                                            |
+|     8.4) If a dirname is mislabeld, The release will be nuked. No other     |
+|          group can PROPER in this instance, it is expected that the release |
+|          will be fixed with a DiRFiX from the original group.               |
+|     8.5) You are not allowed to release DUPES with INTERNAL tag when        |
+|          losing the race. INTERNAL can not be abused to pre a lost race.    |
+|                                                                             |
+|  9) FiXES:                                                                  |
+|     9.1) The only allowed fixes are NFOFiX, DiRFiX, PROOFFiX and RARFiX.    |
+|     9.2) A FiX must contain an NFO and the NFO must state the dirname of    |
+|          release that is being fixed. RARFiX must contain rar/sfv too.      |
+|     9.3) A PROOFFiX must follow the PROOF requirments laid out in 4.2, 4.3  |
+|          and 4.4.                                                           |
+|     9.4) If a release can not be fixed with DiRFiX, PROOFFiX, RARFiX or an  |
+|          NFOFiX then you must REPACK the release, no other FiXES are        |
+|          permitted.                                                         |
+|     9.5) DiRFiX to iNTERNAL is permitted for technical reasons, but never   |
+|          to shield from a nuke for dupe when having lost the race.          |
+|                                                                             |
+| 10) Only these characters are allowed in dirname and filenames:             |
+|     ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.-_       |
+|                                                                             |
+| 11) Suggested directory formats _ and . are both accepted                   |
+|     Game.Name.<PROPER/READ.NFO/REPACK>.NSW-GROUP                            |
+|     Game_Name_<PROPER/READNFO/REPACK>_NSW-GROUP                             |
+|     Game.Name.<PROPER/READ.NFO/REPACK>.MULTI.NSW-GROUP                      |
+|     Game_Name_<PROPER/READNFO/REPACK>_MULTI5_NSW-GROUP                      |
+|     Game.Name.<PROPER/READ.NFO/REPACK>.IAPCrack.NSW-GROUP                   |
+|     Game.Name_<PROPER/READNFO/REPACK>_Plus3_Trainer_NSW-GROUP               |
+|     Game.Name.<PROPER/READ.NFO/REPACK>.v0.1.IAPCrack.NSW-GROUP              |
+|     Game.Name.<PROPER/READ.NFO/REPACK>.Incl.IAPCrack.NSW-GROUP              |
+|     Game_Name_<PROPER/READNFO/REPACK>_DLC_NSW-GROUP                         |
+|     Game_Name_<PROPER/READNFO/REPACK>_EUR_DLC_NSW-GROUP                     |
+|     Game_Name_<PROPER/READNFO/REPACK>_DLC_Unlocker_NSW-GROUP                |
+|     Game.Name.Update.v1.0.1.<PROPER/READNFO/REPACK>.NSW-GROUP               |
+|     Game_Name_Update_v1.0.1_<PROPER/READNFO/REPACK>_NSW-GROUP               |
+|                                                                             |
++-----------------------------------------------------------------------------+
+|                                  Signed                                     |
+|                                                                             |
+|   - HR - JRP - LaKiTu - LiGHTFORCE - LUBE - PUSSYCAT - SUXXORS - VENOM -    |
+|                                                                             |
++-----------------------------------------------------------------------------+
+|  Compliance with this document is mandatory as of 2019-02-01 00:00:01 UTC   |
++-----------------------------------------------------------------------------+
+
